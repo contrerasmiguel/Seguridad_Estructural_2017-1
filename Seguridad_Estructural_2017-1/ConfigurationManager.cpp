@@ -1,6 +1,6 @@
 #include "ConfigurationManager.h"
 
-const vector<int> ConfigurationManager::DEFAULT_KEY_CODES = vector<int>{ 37, 102 };
+const vector<int> ConfigurationManager::DEFAULT_KEY_CODES = vector<int>{ 37, 102, 66, 71 };
 
 ConfigurationManager::ConfigurationManager(string fileName) : configFileName(fileName) { }
 
