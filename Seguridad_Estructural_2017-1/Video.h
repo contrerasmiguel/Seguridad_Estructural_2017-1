@@ -8,10 +8,9 @@ using std::string;
 class Video
 {
 private:
-	const string fileExtension;
+	const static string FILE_EXTENSION;
 	string generateFileName(DateTime* dt) const;
 public:
-	Video(string fileExtension);
 	string record(DateTime* dt) const;
 };
 

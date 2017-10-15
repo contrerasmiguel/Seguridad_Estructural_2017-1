@@ -8,8 +8,7 @@ int main(int argCount, char* arguments[])
 	// kw estará monitoreando las teclas contenidas en key tan pronto se llame al método run.
 	KeyboardWatch kw(cm.getKeys());
 
-	DetectionRecord dr("avi");
-	kw.getListeners()->push_front(&dr);
+	kw.getListeners()->push_front(&DetectionRecord());
 
 	// Una vez configurados los listeners, se llama al método run.
 	kw.run();

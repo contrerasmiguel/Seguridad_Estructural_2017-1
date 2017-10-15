@@ -1,6 +1,6 @@
 #include "Video.h"
 
-Video::Video(string fileExtension) : fileExtension(fileExtension) { }
+const string Video::FILE_EXTENSION = "avi";
 
 string Video::generateFileName(DateTime* dt) const
 {
@@ -11,7 +11,7 @@ string Video::generateFileName(DateTime* dt) const
 	salida += +"_" + dt->getHour();
 	salida += "-" + dt->getMinute();
 	salida += "-" + dt->getSecond();
-	salida += "." + fileExtension;
+	salida += "." + FILE_EXTENSION;
 
 	return salida;
 }

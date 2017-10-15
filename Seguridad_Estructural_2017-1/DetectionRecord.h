@@ -16,7 +16,6 @@ private:
 	LogFileManager logFileManager;
 
 public:
-	DetectionRecord(string fileExtension);
 	void onDetect() const;
 	void onDetectStop() const;
 };
