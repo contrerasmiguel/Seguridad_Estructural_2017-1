@@ -1,22 +1,28 @@
 #pragma once
 
-#include <ctime>
+#include <chrono>
 #include "DateTime.h"
 #include "KeyboardEventListener.h"
 #include "LogFileManager.h"
-#include <string>
 #include "Video.h"
 
-using std::string;
+using std::chrono::duration;
+using std::chrono::steady_clock;
+using std::chrono::time_point;
+using std::milli;
 
 class DetectionRecord : public KeyboardEventListener
 {
 private:
 	Video video;
 	LogFileManager logFileManager;
+	time_point<steady_clock> lastDetectionTimePoint;
+	double getTimeDifference() const;
+	bool hasDetected;
 
 public:
-	void onDetect() const;
-	void onDetectStop() const;
+	DetectionRecord();
+	void onDetect();
+	void onDetectStop();
 };
 

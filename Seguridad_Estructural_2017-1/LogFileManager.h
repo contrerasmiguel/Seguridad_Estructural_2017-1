@@ -11,6 +11,7 @@ using std::endl;
 using std::ofstream;
 using std::ios;
 using std::string;
+using std::to_string;
 
 class LogFileManager
 {

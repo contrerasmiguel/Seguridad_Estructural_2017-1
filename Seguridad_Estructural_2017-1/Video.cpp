@@ -1,24 +1,19 @@
 #include "Video.h"
 
 const string Video::FILE_EXTENSION = "avi";
+const int Video::RECORD_TIME = 7;
 
 string Video::generateFileName(DateTime* dt) const
 {
-	string salida = "seguridad_";
-	salida += dt->getYear();
-	salida += "-" + dt->getMonth();
-	salida += "-" + dt->getDay();
-	salida += +"_" + dt->getHour();
-	salida += "-" + dt->getMinute();
-	salida += "-" + dt->getSecond();
-	salida += "." + FILE_EXTENSION;
-
-	return salida;
+	return "seguridad_" + to_string(dt->getYear()) + "-" + to_string(dt->getMonth()) + "-" + to_string(dt->getDay())
+		+ "_" + to_string(dt->getHour()) + "-" + to_string(dt->getMinute()) + "-" + to_string(dt->getSecond()) + "." + FILE_EXTENSION;
 }
 
 string Video::record(DateTime* dt) const
 {
 	string videoName = generateFileName(dt);
+
+	cout << "Video: camara grabando en archivo '" << videoName << "'." << endl;
 
 	/*VideoCapture vcap(0);
 	if (!vcap.isOpened()) {

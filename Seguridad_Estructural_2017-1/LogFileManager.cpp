@@ -32,12 +32,6 @@ void LogFileManager::logDetectStop(DateTime* dt) const {
 
 string LogFileManager::generateTimeStamp(DateTime* dt) const
 {
-	string salida = "" + dt->getYear();
-	salida += +"-" + dt->getMonth();
-	salida += "-" + dt->getDay();
-	salida += " " + dt->getHour();
-	salida += ":" + dt->getMinute();
-	salida += ":" + dt->getSecond();
-
-	return salida;
+	return to_string(dt->getYear()) + "-" + to_string(dt->getMonth()) + "-" + to_string(dt->getDay())
+		+ " " + to_string(dt->getHour()) + ":" + to_string(dt->getMinute()) + ":" + to_string(dt->getSecond());
 }
