@@ -1,14 +1,14 @@
 #include "KeyboardWatch.h"
 
 void KeyboardWatch::notifyDetectToListeners() const {
-	cout << "KeyboardWatch: llamado a funcion miembro onDetect en listeners." << endl;
+	//cout << "KeyboardWatch: llamado a funcion miembro onDetect en listeners." << endl;
 	for (auto it = listeners.begin(); it != listeners.end(); ++it) {
 		(*it)->onDetect();
 	}
 }
 
 void KeyboardWatch::notifyDetectStopToListeners() const {
-	cout << "KeyboardWatch: llamado a funcion miembro onDetectStop en listeners." << endl;
+	//cout << "KeyboardWatch: llamado a funcion miembro onDetectStop en listeners." << endl;
 	for (auto it = listeners.begin(); it != listeners.end(); ++it) {
 		(*it)->onDetectStop();
 	}

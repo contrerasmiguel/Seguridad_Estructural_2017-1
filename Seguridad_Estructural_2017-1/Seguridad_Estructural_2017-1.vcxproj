@@ -143,18 +143,22 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ConfigurationManager.h" />
+    <ClInclude Include="DateTime.h" />
     <ClInclude Include="DetectionRecord.h" />
     <ClInclude Include="KeyboardEventListener.h" />
     <ClInclude Include="KeyboardWatch.h" />
     <ClInclude Include="LogFileManager.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="Video.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ConfigurationManager.cpp" />
+    <ClCompile Include="DateTime.cpp" />
     <ClCompile Include="DetectionRecord.cpp" />
     <ClCompile Include="KeyboardWatch.cpp" />
     <ClCompile Include="LogFileManager.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Video.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

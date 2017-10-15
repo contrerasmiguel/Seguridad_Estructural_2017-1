@@ -1,5 +1,6 @@
 #pragma once
 
+#include "DateTime.h"
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -15,8 +16,10 @@ class LogFileManager
 {
 private:
 	static const string FILE_NAME;
+	string generateTimeStamp(DateTime* dt) const;
 
 public:
-	void logEvent(string eventDescription) const;
+	void logDetect(DateTime* dt, string videoName) const;
+	void logDetectStop(DateTime* dt) const;
 };
 

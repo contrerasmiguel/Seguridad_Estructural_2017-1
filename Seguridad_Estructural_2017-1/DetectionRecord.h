@@ -1,29 +1,23 @@
 #pragma once
 
 #include <ctime>
+#include "DateTime.h"
 #include "KeyboardEventListener.h"
 #include "LogFileManager.h"
 #include <string>
+#include "Video.h"
 
 using std::string;
 
 class DetectionRecord : public KeyboardEventListener
 {
 private:
+	Video video;
 	LogFileManager logFileManager;
-	const string fileExtension;
-
-	string generateFileName(struct tm* info) const;
-
-	string generateTimeStamp(struct tm* info) const;
-
-	void recordVideo(string videoName) const;
 
 public:
 	DetectionRecord(string fileExtension);
-
 	void onDetect() const;
-
 	void onDetectStop() const;
 };
 

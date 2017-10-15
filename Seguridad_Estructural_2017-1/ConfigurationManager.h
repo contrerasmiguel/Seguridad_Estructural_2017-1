@@ -20,12 +20,10 @@ class ConfigurationManager
 private:
 	string configFileName;
 	static const vector<int> DEFAULT_KEY_CODES;
-
 	void createConfigFile() const;
 
 public:
 	ConfigurationManager(string fileName);
-
 	vector<int> getKeys() const;
 };
 

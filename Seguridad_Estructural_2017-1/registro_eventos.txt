@@ -1,0 +1,11 @@
+
+[2017-10-15 11:56:15] Persona detectada sobre la alfombra. Video: seguridad_2017-10-15_11-56-15.avi
+[2017-10-15 11:56:15] Fin de detección sobre alfombra. Video: seguridad_2017-10-15_11-56-15.avi
+[2017-10-15 11:56:16] Persona detectada sobre la alfombra. Video: seguridad_2017-10-15_11-56-16.avi
+[2017-10-15 11:56:16] Fin de detección sobre alfombra. Video: seguridad_2017-10-15_11-56-16.avi
+[2017-10-15 11:56:17] Persona detectada sobre la alfombra. Video: seguridad_2017-10-15_11-56-17.avi
+[2017-10-15 11:56:18] Fin de detección sobre alfombra. Video: seguridad_2017-10-15_11-56-18.avi
+[2017-10-15 11:56:24] Persona detectada sobre la alfombra. Video: seguridad_2017-10-15_11-56-24.avi
+[2017-10-15 11:56:24] Fin de detección sobre alfombra. Video: seguridad_2017-10-15_11-56-24.avi
+[2017-10-15 11:56:26] Persona detectada sobre la alfombra. Video: seguridad_2017-10-15_11-56-26.avi
+[2017-10-15 11:56:26] Fin de detección sobre alfombra. Video: seguridad_2017-10-15_11-56-26.avi
