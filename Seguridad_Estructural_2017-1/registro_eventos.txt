@@ -237,3 +237,29 @@
 [2017-10-15 16:22:38] Fin de detección sobre alfombra
 [2017-10-15 16:22:48] Inicio de detección sobre alfombra. Video: seguridad_2017-10-15_16-22-48.avi
 [2017-10-15 16:22:49] Fin de detección sobre alfombra
+[2017-10-15 20:48:59] Inicio de detección sobre alfombra. Video: seguridad_2017-10-15_20-48-59.avi
+[2017-10-15 20:48:59] Fin de detección sobre alfombra
+[2017-10-15 20:50:18] Inicio de detección sobre alfombra. Video: seguridad_2017-10-15_20-50-18.avi
+[2017-10-15 20:50:18] Fin de detección sobre alfombra
+[2017-10-15 20:50:32] Inicio de detección sobre alfombra. Video: seguridad_2017-10-15_20-50-32.avi
+[2017-10-15 20:50:35] Fin de detección sobre alfombra
+[2017-10-15 20:51:46] Inicio de detección sobre alfombra. Video: seguridad_2017-10-15_20-51-46.avi
+[2017-10-15 20:51:46] Fin de detección sobre alfombra
+[2017-10-15 20:53:20] Inicio de detección sobre alfombra. Video: seguridad_2017-10-15_20-53-20.avi
+[2017-10-15 20:53:20] Fin de detección sobre alfombra
+[2017-10-15 20:55:38] Inicio de detección sobre alfombra. Video: seguridad_2017-10-15_20-55-38.avi
+[2017-10-15 20:55:38] Fin de detección sobre alfombra
+[2017-10-15 20:55:55] Inicio de detección sobre alfombra. Video: seguridad_2017-10-15_20-55-55.avi
+[2017-10-15 20:55:55] Fin de detección sobre alfombra
+[2017-10-15 20:56:16] Inicio de detección sobre alfombra. Video: seguridad_2017-10-15_20-56-16.avi
+[2017-10-15 20:56:22] Fin de detección sobre alfombra
+[2017-10-15 20:57:25] Inicio de detección sobre alfombra. Video: seguridad_2017-10-15_20-57-25.avi
+[2017-10-15 20:57:25] Fin de detección sobre alfombra
+[2017-10-15 20:57:33] Inicio de detección sobre alfombra. Video: seguridad_2017-10-15_20-57-33.avi
+[2017-10-15 20:57:33] Fin de detección sobre alfombra
+[2017-10-15 20:57:41] Inicio de detección sobre alfombra. Video: seguridad_2017-10-15_20-57-41.avi
+[2017-10-15 20:57:44] Fin de detección sobre alfombra
+[2017-10-15 20:59:15] Inicio de detección sobre alfombra. Video: seguridad_2017-10-15_20-59-15.avi
+[2017-10-15 20:59:15] Fin de detección sobre alfombra
+[2017-10-15 20:59:23] Inicio de detección sobre alfombra. Video: seguridad_2017-10-15_20-59-23.avi
+[2017-10-15 20:59:24] Fin de detección sobre alfombra
