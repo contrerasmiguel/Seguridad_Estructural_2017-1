@@ -8,7 +8,7 @@ void LogFileManager::logDetect(DateTime* dt, string videoName) const {
 
 	if (ofs) {
 		//cout << "LogFileManager: archivo de registro abierto correctamente." << endl;
-		ofs << endl << "[" + generateTimeStamp(dt) + "] Inicio de detección sobre alfombra. Video: " + videoName;
+		ofs << endl << "[" + generateTimeStamp(dt) + "] Inicio de deteccion sobre alfombra. Video: " + videoName;
 	}
 	
 	else {
@@ -22,7 +22,7 @@ void LogFileManager::logDetectStop(DateTime* dt) const {
 
 	if (ofs) {
 		//cout << "LogFileManager: archivo de registro abierto correctamente." << endl;
-		ofs << endl << "[" + generateTimeStamp(dt) + "] Fin de detección sobre alfombra";
+		ofs << endl << "[" + generateTimeStamp(dt) + "] Fin de deteccion sobre alfombra";
 	}
 
 	else {
