@@ -6,7 +6,7 @@ TextEncryption::TextEncryption() : offset(DEFAULT_OFFSET) { }
 
 TextEncryption::TextEncryption(short offset) : offset(offset) { }
 
-string TextEncryption::encrypt(string text) const
+string TextEncryption::encryptText(string text) const
 {
 	string outputText;
 
@@ -21,7 +21,7 @@ string TextEncryption::encrypt(string text) const
 	return outputText;
 }
 
-string TextEncryption::decrypt(string text) const
+string TextEncryption::decryptText(string text) const
 {
 	string outputText;
 

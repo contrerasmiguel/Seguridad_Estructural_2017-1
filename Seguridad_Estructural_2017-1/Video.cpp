@@ -61,5 +61,5 @@ void Video::backgroundRecord(string videoName) const
 	}
 
 	cout << "Video: la camara ha terminado de grabar." << endl;
-	cout << "Video: se ha reactivado la deteccion de presencia." << endl;
+	// cout << "Video: se ha reactivado la deteccion de presencia." << endl;
 }

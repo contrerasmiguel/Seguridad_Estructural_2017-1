@@ -16,7 +16,8 @@ class KeyboardWatch
 private:
 	forward_list<KeyboardEventListener*> listeners;
 	vector<int> keys;
-	bool hadDetected;
+	bool hadDetected, exitRequest;
+	static const int VK_Q;
 
 	// Notificación de inicio de detección.
 	void notifyDetectToListeners() const;

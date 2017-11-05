@@ -12,6 +12,6 @@ private:
 public:
 	TextEncryption();
 	TextEncryption(short offset);
-	string encrypt(string text) const;
-	string decrypt(string text) const;
+	string encryptText(string text) const;
+	string decryptText(string text) const;
 };
