@@ -4,6 +4,7 @@
 #include <fstream>
 #include <iostream>
 #include <string>
+#include "TextEncryption.h"
 
 using std::cout;
 using std::cerr;

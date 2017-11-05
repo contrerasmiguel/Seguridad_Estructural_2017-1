@@ -149,6 +149,7 @@
     <ClInclude Include="KeyboardWatch.h" />
     <ClInclude Include="LogFileManager.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="TextEncryption.h" />
     <ClInclude Include="Video.h" />
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +159,7 @@
     <ClCompile Include="KeyboardWatch.cpp" />
     <ClCompile Include="LogFileManager.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="TextEncryption.cpp" />
     <ClCompile Include="Video.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
