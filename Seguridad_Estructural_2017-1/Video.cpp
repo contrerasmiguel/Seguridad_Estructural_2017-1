@@ -37,31 +37,36 @@ string Video::record(DateTime* dt)
 
 void Video::backgroundRecord(string videoName) const 
 {
-	VideoCapture vcap(0);
-	if (!vcap.isOpened()) {
-	cout << "Error opening video stream or file" << endl;
-	exit(1);
-	}
-
 	int video_lenght = RECORD_TIME;
 	time_t begin = time(NULL);
 	time_t end = begin + video_lenght;
+	VideoCapture vcap(0);
 
-	double frame_width = vcap.get(CV_CAP_PROP_FRAME_WIDTH);
-	double frame_height = vcap.get(CV_CAP_PROP_FRAME_HEIGHT);
+	if (vcap.isOpened()) {
+		double frame_width = vcap.get(CV_CAP_PROP_FRAME_WIDTH);
+		double frame_height = vcap.get(CV_CAP_PROP_FRAME_HEIGHT);
 
-	VideoWriter video(videoName, CV_FOURCC('M', 'J', 'P', 'G'), 10, Size((int)frame_width, (int)frame_height), true);
+		VideoWriter video(videoName, CV_FOURCC('M', 'J', 'P', 'G'), 10, Size((int)frame_width, (int)frame_height), true);
 
-	cout << "Video: camara grabando en archivo '" << videoName << "'." << endl;
-	cout << "Video: se reactivara la deteccion de presencia despues de " << video_lenght << " segundos." << endl;
+		cout << "Video: camara grabando en archivo '" << videoName << "'." << endl;
+		cout << "Video: se reactivara la deteccion de presencia despues de " << video_lenght << " segundos." << endl;
 
-	for (;time(NULL) < end;) {
-		Mat frame;
-		vcap >> frame;
-		video.write(frame);
-		if (waitKey(30) >= 0) break;
+		for (;time(NULL) < end;) {
+			Mat frame;
+			vcap >> frame;
+			video.write(frame);
+			if (waitKey(30) >= 0) break;
+		}
+
+		cout << "Video: la camara ha terminado de grabar." << endl;
 	}
-
-	cout << "Video: la camara ha terminado de grabar." << endl;
-	// cout << "Video: se ha reactivado la deteccion de presencia." << endl;
+	else {
+		cerr << "Video: no se detecto una camara." << endl;
+		cout << "Video: se reactivara la deteccion de presencia despues de " << video_lenght << " segundos." << endl;
+	
+		for (;time(NULL) < end;) {
+			if (waitKey(30) >= 0) break;
+		}
+	}
+	cout << "Video: se ha reactivado la deteccion de presencia." << endl;
 }
