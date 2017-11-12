@@ -1,5 +1,7 @@
 #include "Video.h"
 
+using namespace cv;
+
 const string Video::FILE_EXTENSION = "avi";
 const int Video::RECORD_TIME = 7;
 
@@ -35,29 +37,29 @@ string Video::record(DateTime* dt)
 
 void Video::backgroundRecord(string videoName) const 
 {
-	/*VideoCapture vcap(0);
+	VideoCapture vcap(0);
 	if (!vcap.isOpened()) {
 	cout << "Error opening video stream or file" << endl;
 	exit(1);
-	}*/
+	}
 
 	int video_lenght = RECORD_TIME;
-	long int begin = time(NULL);
-	long int end = begin + video_lenght;
+	time_t begin = time(NULL);
+	time_t end = begin + video_lenght;
 
-	/*int frame_width = vcap.get(CV_CAP_PROP_FRAME_WIDTH);
-	int frame_height = vcap.get(CV_CAP_PROP_FRAME_HEIGHT);
+	double frame_width = vcap.get(CV_CAP_PROP_FRAME_WIDTH);
+	double frame_height = vcap.get(CV_CAP_PROP_FRAME_HEIGHT);
 
-	VideoWriter video(videoName, CV_FOURCC('M', 'J', 'P', 'G'), 10, Size(frame_width, frame_height), true);*/
+	VideoWriter video(videoName, CV_FOURCC('M', 'J', 'P', 'G'), 10, Size((int)frame_width, (int)frame_height), true);
 
 	cout << "Video: camara grabando en archivo '" << videoName << "'." << endl;
 	cout << "Video: se reactivara la deteccion de presencia despues de " << video_lenght << " segundos." << endl;
 
 	for (;time(NULL) < end;) {
-	/*Mat frame;
-	vcap >> frame;
-	video.write(frame);
-	if (waitKey(30) >= 0) break;*/
+		Mat frame;
+		vcap >> frame;
+		video.write(frame);
+		if (waitKey(30) >= 0) break;
 	}
 
 	cout << "Video: la camara ha terminado de grabar." << endl;

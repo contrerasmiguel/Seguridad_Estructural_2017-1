@@ -243,3 +243,8 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+
+# Archivos generados cuando la aplicación se ejecuta
+registro_eventos.txt
+configuracion_teclas.txt
+*_desencriptado.txt

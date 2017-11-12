@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <thread>
+#include <opencv2\opencv.hpp>
 
 using std::cerr;
 using std::cout;
