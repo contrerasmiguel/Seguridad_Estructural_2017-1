@@ -3,7 +3,7 @@
 using namespace cv;
 
 const string Video::FILE_EXTENSION = "avi";
-const int Video::RECORD_TIME = 7;
+const int Video::RECORD_TIME = 14;
 
 Video::Video() : backgroundThread(NULL) { }
 
