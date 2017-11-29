@@ -61,10 +61,10 @@ void startFromDate()
 	do {
 		getline(cin, line);
 		esFormatoValido = stringToDateTime(&y, &m, &d, &h, &min, &s, line);
-		if (!esFormatoValido) {
+		if (!esFormatoValido || !DateTime(y, m, d, h, min, s).isValid()) {
 			cerr << "El formato de la fecha ingresada es invalido." << endl;
 		}
-	} while (!esFormatoValido);
+	} while (!esFormatoValido || !DateTime(y, m, d, h, min, s).isValid());
 	DateTime dt(y, m, d, h, min, s);
 	LogFileManager logFileManager;
 	cout << endl << logFileManager.getLoggedEvents()->showFromDate(dt) << endl;
@@ -79,10 +79,10 @@ void startUntilDate()
 	do {
 		getline(cin, line);
 		esFormatoValido = stringToDateTime(&y, &m, &d, &h, &min, &s, line);
-		if (!esFormatoValido) {
+		if (!esFormatoValido || !DateTime(y, m, d, h, min, s).isValid()) {
 			cerr << "El formato de la fecha ingresada es invalido." << endl;
 		}
-	} while (!esFormatoValido);
+	} while (!esFormatoValido || !DateTime(y, m, d, h, min, s).isValid());
 	DateTime dt(y, m, d, h, min, s);
 	LogFileManager logFileManager;
 	cout << endl << logFileManager.getLoggedEvents()->showUntilDate(dt) << endl;
@@ -97,20 +97,20 @@ void startBetweenDates()
 	do {
 		getline(cin, line);
 		esFormatoValido = stringToDateTime(&y, &m, &d, &h, &min, &s, line);
-		if (!esFormatoValido) {
+		if (!esFormatoValido || !DateTime(y, m, d, h, min, s).isValid()) {
 			cerr << "El formato de la fecha ingresada es invalido." << endl;
 		}
-	} while (!esFormatoValido);
+	} while (!esFormatoValido || !DateTime(y, m, d, h, min, s).isValid());
 	DateTime dtA(y, m, d, h, min, s);
 
 	cout << "Ingrese la fecha tope con el siguiente formato: YYYY-MM-DD HH:MM:SS" << endl;
 	do {
 		getline(cin, line);
 		esFormatoValido = stringToDateTime(&y, &m, &d, &h, &min, &s, line);
-		if (!esFormatoValido) {
+		if (!esFormatoValido || !DateTime(y, m, d, h, min, s).isValid()) {
 			cerr << "El formato de la fecha ingresada es invalido." << endl;
 		}
-	} while (!esFormatoValido);
+	} while (!esFormatoValido || !DateTime(y, m, d, h, min, s).isValid());
 
 	DateTime dtB(y, m, d, h, min, s);
 	LogFileManager logFileManager;

@@ -24,6 +24,7 @@ public:
 	int getSecond() const;
 	bool after(DateTime& dt) const;
 	bool before(DateTime& dt) const;
+	bool isValid() const;
 	string toString() const;
 };
 

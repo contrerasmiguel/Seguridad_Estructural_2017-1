@@ -104,6 +104,12 @@ bool DateTime::before(DateTime& dt) const
 	return year < dt.year;
 }
 
+bool DateTime::isValid() const
+{
+	return year >= 1 && month >= 1 && month <= 12 && day >= 1 && ((month == 2) ? day <= 28 : day <= 31)
+		&& hour >= 0 && hour <= 23 && minute >= 0 && minute <= 59 && second >= 0 && second <= 59;
+}
+
 string DateTime::toString() const
 {
 	stringstream output;
