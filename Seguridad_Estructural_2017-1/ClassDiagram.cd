@@ -10,7 +10,7 @@
   <Class Name="DateTime">
     <Position X="6.25" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>DABkAAAAIAAAAAAAAgAARAAAAAQAAAQAAAAiAAQAAAA=</HashCode>
+      <HashCode>DABkAAAAIAAACAAAAgAARAAAAAQAAAQAAAAiAAQAAAA=</HashCode>
       <FileName>DateTime.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -43,14 +43,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="LoggedEvent">
-    <Position X="7.25" Y="5" Width="2.5" />
+    <Position X="7.25" Y="5.25" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAgAAAAIAAAAAAABAQAAAAABAAAAAAAAAA=</HashCode>
       <FileName>LoggedEvent.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="LoggedEvents">
-    <Position X="4.25" Y="5" Width="2.75" />
+    <Position X="4.25" Y="5.25" Width="2.75" />
     <TypeIdentifier>
       <HashCode>CEAAAAAAAAQAAAAAAAAAAgAAABAAAAAAAACQAgACAAA=</HashCode>
       <FileName>LoggedEvents.h</FileName>

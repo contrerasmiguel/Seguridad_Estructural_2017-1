@@ -131,6 +131,12 @@ Option readOption()
 	return (Option)rawOption;
 }
 
+void waitForKey()
+{
+	cout << endl << "Presione cualquier tecla para continuar..." << endl;
+	_getch();
+}
+
 void showMenu()
 {
 	cout << "SELECCIONE UNA OPCION"
@@ -149,9 +155,10 @@ int main(int argCount, char* arguments[])
 	Option option;
 
 	do {
+		bool opcionInvalida = false;
 		showMenu();
 		option = readOption();
-
+		system("cls");
 		if (option == OPTION_WATCH) {
 			startKeyboardWatch();
 		}
@@ -170,6 +177,19 @@ int main(int argCount, char* arguments[])
 		else if (option == OPTION_SHOW_EVERYTHING) {
 			startShowEverything();
 		}
+		else if (option != OPTION_EXIT) {
+			opcionInvalida = true;
+		}
+
+		if (opcionInvalida) {
+			cout << "Opcion invalida." << endl;
+		}
+
+		if (option != OPTION_EXIT) {
+			waitForKey();
+		}
+		system("cls");
+
 	} while (option != OPTION_EXIT);
 
 	return 0;

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ConfigurationManager.h"
+#include <conio.h>
 #include "DateTime.h"
 #include "DetectionRecord.h"
 #include <iostream>
@@ -39,5 +40,6 @@ void startUntilDate();
 void startBetweenDates();
 void startShowEverything();
 Option readOption();
+void waitForKey();
 void showMenu();
 int main(int argCount, char* arguments[]);
