@@ -14,6 +14,7 @@
     </Link>
     <ClCompile>
       <AdditionalIncludeDirectories>$(OPENCV_DIR)\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup />

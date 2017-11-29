@@ -14,29 +14,133 @@ void startKeyboardWatch()
 	kw.run();
 }
 
-void startLogDecrypt()
+short askForKey()
 {
 	short key;
-	LogFileManager logFileManager;
-
 	cout << "Ingrese la clave para desencriptar el archivo: ";
 	cin >> key;
-	logFileManager.decryptFile(key);
+	clearInputBuffer();
+	return key;
+}
+
+void startLogDecrypt()
+{
+	LogFileManager logFileManager/*(askForKey())*/;
+	logFileManager.decryptFile();
+}
+
+void clearInputBuffer()
+{
+	cin.clear();
+	cin.ignore((std::numeric_limits<streamsize>::max)(), '\n');
+}
+
+bool stringToDateTime(int* y, int* m, int* d, int* h, int* min, int* s, string str)
+{
+	regex pattern("\\s*(\\d+)\\s*\\-\\s*(\\d+)\\s*\\-\\s*(\\d+)\\s+(\\d+)\\s*\\:\\s*(\\d+)\\s*\\:\\s*(\\d+)\\.*");
+	smatch match;
+
+	if (regex_search(str, match, pattern)) {
+		*y = atoi(((string)match[1]).c_str());
+		*m = atoi(((string)match[2]).c_str());
+		*d = atoi(((string)match[3]).c_str());
+		*h = atoi(((string)match[4]).c_str());
+		*min = atoi(((string)match[5]).c_str());
+		*s = atoi(((string)match[6]).c_str());
+		return true;
+	}
+	return false;
+}
+
+void startFromDate()
+{
+	cout << "Ingrese la fecha de inicio con el siguiente formato: YYYY-MM-DD HH:MM:SS" << endl;
+	string line;
+	int y, m, d, h, min, s;
+	bool esFormatoValido;
+	do {
+		getline(cin, line);
+		esFormatoValido = stringToDateTime(&y, &m, &d, &h, &min, &s, line);
+		if (!esFormatoValido) {
+			cerr << "El formato de la fecha ingresada es invalido." << endl;
+		}
+	} while (!esFormatoValido);
+	DateTime dt(y, m, d, h, min, s);
+	LogFileManager logFileManager;
+	cout << endl << logFileManager.getLoggedEvents()->showFromDate(dt) << endl;
+}
+
+void startUntilDate()
+{
+	cout << "Ingrese la fecha tope con el siguiente formato: YYYY-MM-DD HH:MM:SS" << endl;
+	string line;
+	int y, m, d, h, min, s;
+	bool esFormatoValido;
+	do {
+		getline(cin, line);
+		esFormatoValido = stringToDateTime(&y, &m, &d, &h, &min, &s, line);
+		if (!esFormatoValido) {
+			cerr << "El formato de la fecha ingresada es invalido." << endl;
+		}
+	} while (!esFormatoValido);
+	DateTime dt(y, m, d, h, min, s);
+	LogFileManager logFileManager;
+	cout << endl << logFileManager.getLoggedEvents()->showUntilDate(dt) << endl;
+}
+
+void startBetweenDates()
+{
+	cout << "Ingrese la fecha de inicio con el siguiente formato: YYYY-MM-DD HH:MM:SS" << endl;
+	string line;
+	int y, m, d, h, min, s;
+	bool esFormatoValido;
+	do {
+		getline(cin, line);
+		esFormatoValido = stringToDateTime(&y, &m, &d, &h, &min, &s, line);
+		if (!esFormatoValido) {
+			cerr << "El formato de la fecha ingresada es invalido." << endl;
+		}
+	} while (!esFormatoValido);
+	DateTime dtA(y, m, d, h, min, s);
+
+	cout << "Ingrese la fecha tope con el siguiente formato: YYYY-MM-DD HH:MM:SS" << endl;
+	do {
+		getline(cin, line);
+		esFormatoValido = stringToDateTime(&y, &m, &d, &h, &min, &s, line);
+		if (!esFormatoValido) {
+			cerr << "El formato de la fecha ingresada es invalido." << endl;
+		}
+	} while (!esFormatoValido);
+
+	DateTime dtB(y, m, d, h, min, s);
+	LogFileManager logFileManager;
+	cout << endl << logFileManager.getLoggedEvents()->showBetweenDates(dtA, dtB) << endl;
+}
+
+void startShowEverything()
+{
+	LogFileManager logFileManager;
+	cout << endl << logFileManager.getLoggedEvents()->showEverything() << endl;
 }
 
 Option readOption()
 {
 	int rawOption;
 	cin >> rawOption;
+	clearInputBuffer();
 	return (Option)rawOption;
 }
 
 void showMenu()
 {
 	cout << "SELECCIONE UNA OPCION"
-		<< endl << "1. Activar sistema de vigilancia."
-		<< endl << "2. Desencriptar registro de eventos."
-		<< endl << "3. Salir."
+		<< endl << OPTION_WATCH << ". Activar sistema de vigilancia."
+		<< endl << OPTION_DECRYPT << ". Desencriptar registro de eventos en archivo de texto."
+		<< endl << OPTION_FROM_DATE << ". Mostrar eventos registrados a partir de una fecha."
+		<< endl << OPTION_UNTIL_DATE << ". Mostrar eventos registrados hasta una fecha."
+		<< endl << OPTION_BETWEEN_DATES << ". Mostrar eventos registrados entre dos fechas."
+		<< endl << OPTION_SHOW_EVERYTHING << ". Mostrar todos los eventos."
+		<< endl << OPTION_EXIT << ". Salir."
 		<< endl;
 }
 
@@ -53,6 +157,18 @@ int main(int argCount, char* arguments[])
 		}
 		else if (option == OPTION_DECRYPT) {
 			startLogDecrypt();
+		}
+		else if (option == OPTION_FROM_DATE) {
+			startFromDate();
+		}
+		else if (option == OPTION_UNTIL_DATE) {
+			startUntilDate();
+		}
+		else if (option == OPTION_BETWEEN_DATES) {
+			startBetweenDates();
+		}
+		else if (option == OPTION_SHOW_EVERYTHING) {
+			startShowEverything();
 		}
 	} while (option != OPTION_EXIT);
 

@@ -154,6 +154,8 @@
     <ClInclude Include="KeyboardEventListener.h" />
     <ClInclude Include="KeyboardWatch.h" />
     <ClInclude Include="LogFileManager.h" />
+    <ClInclude Include="LoggedEvent.h" />
+    <ClInclude Include="LoggedEvents.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="TextEncryption.h" />
     <ClInclude Include="Video.h" />
@@ -164,6 +166,8 @@
     <ClCompile Include="DetectionRecord.cpp" />
     <ClCompile Include="KeyboardWatch.cpp" />
     <ClCompile Include="LogFileManager.cpp" />
+    <ClCompile Include="LoggedEvent.cpp" />
+    <ClCompile Include="LoggedEvents.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="TextEncryption.cpp" />
     <ClCompile Include="Video.cpp" />

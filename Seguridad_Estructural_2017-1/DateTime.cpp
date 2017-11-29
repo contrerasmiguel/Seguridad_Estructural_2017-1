@@ -15,6 +15,9 @@ DateTime::DateTime()
 	second = parts.tm_sec;
 }
 
+DateTime::DateTime(int y, int m, int d, int h, int min, int s)
+	: year(y), month(m), day(d), hour(h), minute(min), second(s) { }
+
 int DateTime::getYear() const
 {
 	return year;
@@ -43,4 +46,68 @@ int DateTime::getMinute() const
 int DateTime::getSecond() const
 {
 	return second;
+}
+
+bool DateTime::after(DateTime& dt) const
+{
+	if (year == dt.year) {
+		if (month == dt.month) {
+			if (day == dt.day) {
+				if (hour == dt.hour) {
+					if (minute == dt.minute) {
+						return second >= dt.second;
+					}
+					else {
+						return minute > dt.minute;
+					}
+				}
+				else {
+					return hour > dt.hour;
+				}
+			}
+			else {
+				return day > dt.day;
+			}
+		}
+		else {
+			return month > dt.month;
+		}
+	}
+	return year > dt.year;
+}
+
+bool DateTime::before(DateTime& dt) const
+{
+	if (year == dt.year) {
+		if (month == dt.month) {
+			if (day == dt.day) {
+				if (hour == dt.hour) {
+					if (minute == dt.minute) {
+						return second <= dt.second;
+					}
+					else {
+						return minute < dt.minute;
+					}
+				}
+				else {
+					return hour < dt.hour;
+				}
+			}
+			else {
+				return day < dt.day;
+			}
+		}
+		else {
+			return month < dt.month;
+		}
+	}
+	return year < dt.year;
+}
+
+string DateTime::toString() const
+{
+	stringstream output;
+	output << year << "-" << month << "-" << day
+		<< " " << hour << ":" << minute << ":" << second;
+	return output.str();
 }
